@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование Фильма</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Редактирование роли пользователя</h1>
+    <form th:action="@{/home/admin/saveRole}" th:object="${user}" method="post">
+        <table class="table mt-4">
+            <tr>
+                <td><label for="userId">Id:</label></td>
+                <td><input type="number" th:field="*{userId}" id="userId" class="form-control" readonly></td>
+            </tr>
+            <tr>
+                <td><label for="username">Имя пользователя:</label></td>
+                <td><input type="text" th:field="*{username}" id="username" class="form-control" readonly></td>
+            </tr>
+            <tr style="display: none;">
+                <td><input type="hidden" th:field="*{password}" id="password"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="text" th:field="*{email}" id="email" class="form-control" readonly></td>
+            </tr>
+            <tr>
+                <td><label for="role">Роль:</label></td>
+                <td>
+                    <select th:field="*{role}" id="role" class="form-control">
+                        <option th:each="role : ${roles}" th:value="${role.roleId}" th:text="${role.name}"></option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+        <a href="/home/admin/users" class="btn btn-secondary">Назад</a>
+    </form>
+</div>
+</body>
+</html>

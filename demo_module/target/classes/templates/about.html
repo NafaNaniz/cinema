@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Об авторе</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Об авторе</h1>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/home/user}" th:if="${role == 'USER'}">Главная</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/home/admin}" th:if="${role == 'ADMIN'}">Главная</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="">Об авторе</a>
+        </li>
+        <li class="nav-item" th:if="${role == 'ADMIN'}">
+          <a class="nav-link" th:href="@{/home/admin/analytics}">Аналитика</a>
+        </li>
+        <li class="nav-item" th:if="${role == 'ADMIN'}">
+          <a class="nav-link" th:href="@{/home/admin/users}">Пользователи</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="card mt-4">
+    <div class="card-body">
+      <p><strong>Имя:</strong> Нафисет</p>
+      <p><strong>Фамилия:</strong> Наниз</p>
+      <p><strong>Курс:</strong> 3</p>
+      <p><strong>Группа:</strong> ПИ22-4</p>
+      <p><strong>Направление обучения:</strong> Прикладная информатика</p>
+      <p><strong>Специальность:</strong> Прикладные информационные системы в экономике и финансах</p>
+      <p><strong>Описание:</strong> Это приложение разработано для управления списком фильмов. Цель проекта — изучение Spring Boot, Thymeleaf и JPA.</p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование Фильма</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Редактирование фильма</h1>
+    <form th:action="@{/home/admin/save}" th:object="${movie}" method="post">
+        <table class="table mt-4">
+            <tr>
+                <td><label for="movieId">Id:</label></td>
+                <td><input type="number" th:field="*{movieId}" id="movieId" class="form-control" readonly></td>
+            </tr>
+            <tr>
+                <td><label for="movieTitle">Название фильма:</label></td>
+                <td><input type="text" th:field="*{movieTitle}" id="movieTitle" class="form-control"></td>
+            </tr>
+            <tr>
+                <td><label for="genre">Жанр:</label></td>
+                <td><input type="text" th:field="*{genre}" id="genre" class="form-control"></td>
+            </tr>
+            <tr>
+                <td><label for="director">Режиссёр:</label></td>
+                <td><input type="text" th:field="*{director}" id="director" class="form-control"></td>
+            </tr>
+            <tr>
+                <td><label for="releaseDate">Дата выпуска:</label></td>
+                <td><input type="date" th:field="*{releaseDate}" id="releaseDate" class="form-control"></td>
+            </tr>
+            <tr>
+                <td><label for="description">Описание:</label></td>
+                <td><textarea th:field="*{description}" id="description" class="form-control"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="duration">Длительность (минуты):</label></td>
+                <td><input type="number" th:field="*{duration}" id="duration" class="form-control"></td>
+            </tr>
+            <tr>
+                <td><label for="posterURL">Постер (URL):</label></td>
+                <td><input type="text" th:field="*{posterURL}" id="posterURL" class="form-control"></td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+        <a href="/home/admin" class="btn btn-secondary">Назад</a>
+    </form>
+</div>
+</body>
+</html>
