@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.example.movie_theatre"},{"l":"com.example.movie_theatre.configuration"},{"l":"com.example.movie_theatre.controller"},{"l":"com.example.movie_theatre.model"},{"l":"com.example.movie_theatre.repository"},{"l":"com.example.movie_theatre.service"}];updateSearchResults();

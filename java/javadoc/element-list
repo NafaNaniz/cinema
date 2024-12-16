@@ -1,0 +1,6 @@
+com.example.movie_theatre
+com.example.movie_theatre.configuration
+com.example.movie_theatre.controller
+com.example.movie_theatre.model
+com.example.movie_theatre.repository
+com.example.movie_theatre.service
